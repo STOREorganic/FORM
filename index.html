@@ -1,51 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Affordable Organic Store</title>
     <link rel="stylesheet" href="form.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div id="box">
-        <form action="" name="submit-to-google-sheet" method="post">
-            <h4>Raw material packing data</h4>
+      <form action="" name="submit-to-google-sheet" method="post">
+        <h4>Raw material packing data</h4>
 
-            <label for="sn">Serial No.</label>
-            <input type="number" name="Sno." id="sn" placeholder="Sno." required /><br />
+        <label for="sn">Serial No.</label>
+        <input
+          type="number"
+          name="Sno."
+          id="sn"
+          placeholder="Sno."
+          required
+        /><br />
 
-            <label for="date-of-packing">Date of packing</label>
-            <input type="date" name="Date_of_packing " id="date-of-packing" placeholder="Date of packing" required /><br />
+        <label for="date-of-packing">Date of packing</label>
+        <input
+          type="date"
+          name="Date_of_packing "
+          id="date-of-packing"
+          placeholder="Date of packing"
+          required
+        /><br />
 
-            <label for="name-of-packer">Name of Packer</label>
-            <input type="text" name="Name_of_Packer" id="name-of-packer" placeholder="Name of Packer" required /><br />
+        <label for="name-of-packer">Name of Packer</label>
+        <input
+          type="text"
+          name="Name_of_Packer"
+          id="name-of-packer"
+          placeholder="Name of Packer"
+          required
+        /><br />
 
-            <label for="raw-material-name">Raw material name</label>
-            <input type="text" name="Raw_material_name" id="raw-material-name" placeholder="Raw material name" required /><br />
+        <label for="raw-material-name">Raw material name</label>
+        <input
+          type="text"
+          name="Raw_material_name"
+          id="raw-material-name"
+          placeholder="Raw material name"
+          required
+        /><br />
 
-            <label for="weight-per-packet">Weight per packet</label>
-            <input type="number" name="Weight_per_packet " id="weight-per-packet" placeholder="Weight per packet" required /><br />
+        <label for="weight-per-packet">Weight per packet</label>
+        <input
+          type="number"
+          name="Weight_per_packet "
+          id="weight-per-packet"
+          placeholder="Weight per packet"
+          required
+        /><br />
 
-            <label for="number-of-packets">Number of packets</label>
-            <input type="number" name="No._of_packets " id="number-of-packets" placeholder="Number of packets" required /><br />
+        <label for="number-of-packets">Number of packets</label>
+        <input
+          type="number"
+          name="No._of_packets "
+          id="number-of-packets"
+          placeholder="Number of packets"
+          required
+        /><br />
 
-            <label for="raw-material-weight">Raw material weight</label>
-            <input type="number" name="Raw_Material_Weight" id="raw-material-weight" placeholder="Raw material weight" required /><br />
+        <label for="raw-material-weight">Raw material weight</label>
+        <input
+          type="number"
+          name="Raw_Material_Weight"
+          id="raw-material-weight"
+          placeholder="Raw material weight"
+          required
+        /><br />
 
-            <input type="submit" value="Submit" id="submit" />
-        </form>
+        <input type="submit" value="Submit" id="submit" />
+      </form>
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxVrift2kFEZMjxCvoHpexWseS4K-n0xmlyBJO7FH3IoP8G0iWXREi5ONdU0_X1-SaY/exec'
-        const form = document.forms['submit-to-google-sheet']
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxVrift2kFEZMjxCvoHpexWseS4K-n0xmlyBJO7FH3IoP8G0iWXREi5ONdU0_X1-SaY/exec";
+      const form = document.forms["submit-to-google-sheet"];
 
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert('Your response has been successfully submitted. Thank you!', response))
-                .catch(error => alert('Error!', error.message))
-        })
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Submitting your data, please wait...");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            alert("Your response has been successfully submitted. Thank you!");
+            window.location.reload(); // Reload the page after successful submission
+          })
+
+          .catch((error) => alert("Error!", error.message));
+      });
     </script>
-</body>
+  </body>
 </html>
