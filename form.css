@@ -54,6 +54,7 @@ h4 {
     font-size: 16px;
   }
   #box {
+    max-width: 100%;
     padding: 20px;
   }
   h4 {
@@ -86,6 +87,7 @@ h4 {
   }
 
   #box {
+    max-width: 100%;
     padding: 15px;
   }
 
