@@ -36,6 +36,14 @@ h4 {
   margin-bottom: 12px;
   padding: 6px;
 }
+#box select{
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 6px;
+}
+#box option{
+  font-size: 16px;
+}
 #box label {
   display: block;
   margin-bottom: 4px;
@@ -47,6 +55,7 @@ h4 {
   color: white;
   margin-top: 10px;
 }
+
 @media (max-width: 768px) {
   body {
     margin-top: 10px;
@@ -69,7 +78,13 @@ h4 {
     font-size: 16px;
     padding: 5px;
   }
-
+  #box select{
+    font-size: 16px;
+    padding: 5px;
+  }
+  #box option{
+    font-size: 12px;
+  }
   #box input[type="submit"] {
     width: 100%;
     font-size: 18px;
@@ -103,7 +118,13 @@ h4 {
     font-size: 14px;
     padding: 4px;
   }
-
+  #box select{
+    font-size: 14px;
+    padding: 5px;
+  }
+  #box option{
+    font-size: 10px;
+  }
   #box input[type="submit"] {
     width: 100%;
     font-size: 16px;
